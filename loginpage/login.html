@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="Author" content="Eza">
+		<meta name="theme-color" content="#16ac91">
+		<meta name="msapplication-navbutton-color" content="#16ac91">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#16ac91">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="icon" href="img/favicon.ico">
+		<title>LINTAS JARINGAN NUSANTARA (LJN)</title>
+		
+		<link rel="stylesheet" media="screen, projection" href="css/all.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+<body>
+
+<div class="app-container">
+	<div class="page page-home page-with-subnavbar">
+
+<!-- Toolbar -->
+<div class="toolbar tabbar tabbar-labels toolbar-bottom">
+	<div class="toolbar-inner">
+  <a href="login.html" class="tab-link tab-link-active">
+   <i class="fas fa-home"></i>
+    <p>Beranda</p>
+  </a>
+  <a href="fitur.html" class="tab-link">
+    <i class="fas fa-list-alt"></i>
+    <p>Fitur</p>
+  </a>
+  <a href="paket.html" class="tab-link">
+    <i class="fas fa-list"></i>
+    <p>Paket</p>
+  </a>
+    <a href="aktivasi.html" class="tab-link">
+     <i class="fas fa-shield"></i>
+     <p>Aktivasi</p>
+    </a>
+  <a href="about.html" class="tab-link">
+    <i class="fas fa-user"></i>
+    <p>Tentang</p>
+  </a>
+  </a>
+ </div> <!-- end toolbar inner -->
+</div><!-- end Toolbar -->
+
+
+<!-- header -->
+<header class="background-primer">
+	<div class="back-panel color-white"><i class="fas fa-home"></i></div>
+ <h1 class="color-white margin-left-small">LINTAS JARINGAN NUSANTARA(LJN)</h1>
+
+<div class="navbar">
+ <ul class="navbar-inner">
+	<li><a href="login.html"> <i class="fas fa-home"></i> Beranda</a></li>
+	<li><a href="fitur.html"><i class="fas fa-list-alt"></i> Fitur </a></li>
+	<li><a href="paket.html">
+    <i class="fas fa-list"></i> Paket</a></li>
+	<li><a href="aktivasi.html"><i class="fas fa-shield"></i> Aktivasi </a></li>
+	<li> <a href="about.html"><i class="fas fa-user"></i> Tentang </a></li>
+	</ul>
+ </div>
+
+<div class="header-right">
+<ul class="links">
+	<li class="rad-dropdown"><a class="rad-menu-item" href="#"><i class="fas fa-bell"><span class="rad-menu-badge">1</span></i></a></li>
+	<li>
+		<ul class="rad-dropmenu-item"><li id="statusServer"></li></ul>
+	</li>
+</ul>
+	</div>
+</header> <!-- end header -->
+
+<!-- slider -->
+<div class="border-radius-style background-slider background-primer">
+	<div class="container ez__slider">
+		<div class="padding-box-small box-shadow background-white border-radius">
+     		<div class="owl-carousel owl-theme">
+      <div class="item">
+		<img src="img/banner1.jpg" alt="img2" />
+      </div>
+      <div class="item">
+       <img src="img/banner2.jpg" alt="img2" />
+      </div>
+   <div class="item">
+       <img src="img/banner3.jpg" alt="img3" />
+      </div>
+      <div class="item">
+       <img src="img/banner4.jpg" alt="img3" />
+      </div>
+	 </div><!-- end owl carousel -->
+
+    </div>
+   </div>
+  </div> <!-- end Slider -->
+
+ </div>
+</div><!-- end App Container -->
+
+<div class="separator-small"></div>
+
+<!-- Voucher Login -->
+<div class="login">
+ <div class="container">
+  <h6 class="margin-bottom-small text-center">Masukkan <span class="color-primer">Kode Voucher</span></h6>
+  <div class="background-white border-radius padding-box-small box-shadow">
+   <div class="row row-no-margin-bottom">
+	<form id="loginvcr" name="loginvcr" action="$(link-login-only)" method="post" autocomplete="off"
+		$(if chap-id) onSubmit="return doLoginVCR()" $(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+		<input type="text" name="username" placeholder="Kode Voucher" id="uservcr" required>
+		<input type="hidden" name="password" id="passvcr">
+		<button type="submit" class="buttons buttons-small">Masuk</button>
+	</form>   
+   </div>
+  </div>
+  $(if error)
+<div id="infoError" class="infoError">
+   <script type="text/javascript">
+    var error = "$(error)";
+    var error1 = "Pengguna $(username) telah mencapai batas waktu yang diijinkan";
+    var error2 = "pengguna $(username) telah mencapai batas trafik yang diijinkan";
+    var error3 = "Tidak ada profil valid ditemukan";
+    var error4 = "Kata sandi atau nama pengguna salah";
+    var error5 = "Pengguna &lt;$(username)&gt; Tidak ditemukan";
+    var error6 = "Sesi penuh";
+	var error7 = "Tak ada sesi untuk $(username)"
+    if (error == error1 || error == error2 || error == error3) {
+     document.getElementById("infoError").innerHTML = '<i class="fas fa-exclamation-circle"></i> Masa Aktif Voucher anda sudah habis';
+    } else if (error == error4) {
+     document.getElementById("infoError").innerHTML = '<i class="fas fa-exclamation-circle"></i> Member atau Voucher salah atau tidak terdaftar di server kami';
+    } else if (error == error5) {
+     document.getElementById("infoError").innerHTML = '<i class="fas fa-exclamation-circle"></i> Member atau Voucher Tidak Ditemukan';
+    } else if (error == error6) {
+     document.getElementById("infoError").innerHTML = '<i class="fas fa-exclamation-circle"></i> Jumlah Session Login Telah Dibatasi';
+    } else if (error == error7) {
+     document.getElementById("infoError").innerHTML = '<i class="fas fa-exclamation-circle"></i> Member atau Voucher sedang digunakan di perangkat lain';
+    } else {
+     document.getElementById("infoError").innerHTML = '<i class="fas fa-info-circle"></i> $(error)';
+    }
+   </script>
+  </div> <!-- end info error -->
+  $(endif)
+ </div> <!-- end container -->
+</div> <!-- end Voucher Login -->
+
+<div class="separator-small"></div>
+
+<!-- Opsi Menu -->
+<div class="menus">
+ <div class="container">
+  <div class="row">
+   <div class="col">
+    <a href="trial-user.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-lime"><i class="fas fa-broadcast-tower"></i></span>
+      <h6 class="font-weight-500">Gratis</h6>
+	  
+	  
+	  
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="voucher.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-orange"><i class="fas fa-ticket"></i></span>
+      <h6 class="font-weight-500">Voucher</h6>
+     </div>
+    </a>
+   </div>
+   
+   <div class="col">
+    <a href="member.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-purple"><i class="fas fa-users"></i></span>
+      <h6 class="font-weight-500">Member</h6>
+     </div>
+    </a>
+   </div>
+  </div>
+  
+  
+
+  
+  
+
+  
+  
+  
+  <div class="row">
+   <div class="col">
+    <a onclick="document.location='https://krdsah.eu.org/qrcode/';" href="#">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-teal"><i class="fas fa-qrcode"></i></span>
+      <h6 class="font-weight-500">QRCode</h6>
+     </div>
+    </a>
+   </div>
+   <div class="col">
+    <a href="faq.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-yellow"><i class="fas fa-question-circle"></i></span>
+      <h6 class="font-weight-500">Bantuan</h6>
+     </div>
+    </a>
+   </div>
+   
+   
+   
+   <div class="col">
+    <a href="kontak.html">
+     <div class="background-white text-center border-radius padding-box box-shadow">
+      <span class="icon-big icon-color-lime"><i class="fas fa-envelope"></i></span>
+      <h6 class="font-weight-500">Kontak</h6>
+     </div>
+	  </a>
+   </div>
+	</div>
+  </div>
+</div><!-- end Opsi Menu -->
+
+<div class="separator-small"></div>
+
+<h6 class="margin-bottom-small text-left">1.Vocher terkoneksi di semua lokasi  <a href="video.html"> <span class="color-primer">KLIK DISINI</span></h6>
+
+<!-- Social Media -->
+<div class="container margin-bottom-big socmed">
+	<div class="background-white border-radius box-shadow padding-box-middle text-center">
+  <h4 class="margin-bottom-small">Ikuti Kami di :</h4>
+  <ul>
+   <li><a href="https://www.facebook.com/Lintasjaringannusantara"><span class="icon-small icon-width socmed-bg-facebook color-white"><i class="fab fa-facebook"></i></span></a></li>
+   
+   <li><a href="https://www.youtube.com/channel/UCrYibJXvc4feMAgBD_zWKOQ/videos" class="icon-small icon-width socmed-bg-youtube color-white"><i class="fab fa-youtube"></i></span></a></li>
+  </ul>
+	 </div>
+</div> <!-- end Social Media -->
+
+
+<div class="separator"></div>
+<div class="separator-bottom"></div>
+
+
+<footer class="copyright">
+<small> Copyright &copy; 2022 LINTAS JARINGAN NUSANTARA(LJN)</small>
+</footer>
+
+$(if chap-id) 
+<form name="sendin" action="$(link-login-only)" method="post">
+	<input type="hidden" name="username" />
+	<input type="hidden" name="password" />
+	<input type="hidden" name="dst" value="$(link-orig)" />
+	<input type="hidden" name="popup" value="true" />
+</form>
+
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+// Login Voucher
+function doLoginVCR() {
+	document.sendin.username.value = document.loginvcr.username.value;
+	document.sendin.password.value = hexMD5('$(chap-id)' + document.loginvcr.username.value + '$(chap-challenge)');
+	document.sendin.submit();
+	return false;
+}
+</script>
+$(endif)
+
+<script src="js/jquery.js"></script>
+<script src="js/owl.min.js"></script>
+<script type="text/javascript">
+var host = window.location.hostname;
+document.title = "Login Hotspot - " + host;
+function kodevoucher() {
+    var uservalue = document.getElementById("uservcr").value; // .toLowerCase(); // .toUpperCase();
+    document.getElementById("uservcr").value = uservalue;
+}
+document.getElementById("uservcr").focus();
+document.getElementById("uservcr").onkeyup = kodevoucher;
+</script>
+<!-- end script -->
+<script>
+$(document).ready(function() {
+	window.setTimeout(function() {
+		$(".infoError").fadeTo(1000, 0).slideUp(1000, function() {
+			$(this).remove();
+		});
+	}, 10000);
+});
+</script>
+<script>
+// Status server
+var img = new Image();
+img.onload = function(){
+	document.getElementById("statusServer").innerHTML = '<i class="fas fa-wifi"></i> Server Sedang Online !';
+};
+img.onerror = function() {
+	var offln = document.querySelector('.rad-dropmenu-item');
+	offln.classList.add('active');
+	document.getElementById("statusServer").innerHTML = '<i class="red fas fa-skull"></i> Server Sedang Offline !';
+};
+// Cek status koneksi
+img.src = 'http://krdsah.eu.org/qrcode/200OK.jpg';
+</script>
+
+<script>
+var addActive = function(e){
+  e.stopPropagation();
+  $(".rad-dropmenu-item").toggleClass("active");
+};
+var removeActive = function(){
+    $('.rad-dropmenu-item.active').removeClass('active');
+};
+$(document).ready(function() {
+  $('li.rad-dropdown > a.rad-menu-item').on('click',addActive);
+  $('body').on('click',removeActive);
+});
+</script>
+<script>
+$(document).ready(function() {
+ $('.owl-carousel').owlCarousel({
+  loop: true,
+  dots: false,
+  autoplay: true,
+  autoplayTimeout: 2500,
+  autoplayHoverPause: true,
+  nav: true,
+  navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+  navClass: ['ez__btn--prev', 'ez__btn--next'],
+  responsiveClass: true,
+  responsive: {
+		0: {
+			items: 1,
+			margin: 5,
+			autoHeight: false
+		},
+		768: {
+			items: 1,
+		},
+		1000: {
+			items: 1,
+		},
+		1310: {
+			items: 1,
+			autoWidth: false,
+		},
+		1600: {
+			items: 1,
+			autoWidth: false,
+		}
+  }
+ });
+});
+</script>
+</body>
+</html>

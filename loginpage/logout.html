@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+<head>
+	 <meta charset="UTF-8" />
+	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	 <title>Keluar &mdash; lintas.net.id </title>
+	<meta name="Author" content="Eza" />
+	 <meta name="theme-color" content="#16ac91" />
+	 <meta name="msapplication-navbutton-color" content="#16ac91" />
+	 <meta name="apple-mobile-web-app-status-bar-style" content="#16ac91" />
+	 <meta name="apple-mobile-web-app-capable" content="yes" />
+	 <link rel="icon" href="img/favicon.png" />
+	 <link rel="stylesheet" href="css/all.min.css" />
+	 <link rel="stylesheet" href="css/style.css" />
+<style>
+a{color:#35aadc;text-decoration:none}h1{font-size:32px}h2{font-size:18px}.login-member{box-shadow:0 0 15px rgba(0,0,0,.1);}
+</style>
+	</head>
+<body class="login-wrapper">
+
+<script>
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+</script>
+<div class="">
+ <div class="">
+
+
+   <div class="margin-bottom">
+    <!-- login member -->
+
+<div class="login-member">
+	<div class="container">
+     <div class="link-closes">
+      <a id="linkBack" href="#" class="link back float-right">
+       <i class="fas fa-times"></i>
+      </a>
+     </div>
+
+     
+<h1 class="color-white text-left margin-bottom-large">Terima Kasih !</h1><br>
+<h2 class="color-white">Telah menggunakan layanan internet kami.</h2><br>
+		
+      <div class="main-content">
+			
+       
+       <p style="background:#fff;padding:1rem;text-align:left;border-radius:5px;margin-top:1rem;bix-shadow: 0 0 15px rgba(0,0,0,.1);">Anda telah <b>keluar dari jaringan kami</b>. Silahkan klik tombol di bawah ini agar dapat terhubung kembali.
+       </p>
+       
+<div class="separator-small"></div>
+
+       <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+        <button class="buttons buttons-center box-shadow"><i class="fas fa-arrow-circle-left"></i> Kembali Login</button>
+       </form>
+      </div><!-- end main content -->
+	
+
+<div class="separator"></div>
+<div class="separator-small"></div>
+
+     <!-- follow us -->
+<div class="margin-bottom">
+	<div class="text-center">
+       
+		</div><!-- end container -->
+	</div><!-- end login member -->
+</div><!-- end page content -->
+
+</div><!-- end page -->
+	</div><!-- end app container -->
+<div class="separator"></div>
+<div class="separator-small"></div>
+
+
+    <footer class="copyright">
+<small> Copyright &copy; 2022 lintas.net.id</small>
+</footer>
+
+<script src="js/jquery.js"></script>
+
+<script>
+$(document).ready(function() {
+	
+	$('#linkBack').on('click',function(){
+		$('.login-member').slideUp('100');
+		$('body').slideUp('100');
+		setInterval(function(){
+			history.back();
+		}, 1000)
+	});
+});
+</script>
+</body>
+</html>

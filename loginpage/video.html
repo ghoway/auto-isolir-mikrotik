@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom HTML5 Video Player with CSS & JS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="icons/flaticon.css"/>
+</head>
+<body>
+
+<div class="container">
+	<div class="page-title">
+		
+		<small>Supaya video bisa Lancar di play & Full scren silahkan buka di app chorome.dengan mengetik ljn.net di address bar</a></small>
+	</div>
+	<div class="video-player" id="video-mask">
+		<video id="video" width="100%">
+			<source src="file/1.mp4" type="video/mp4"/>
+			<source src="file/1.ogg" type="video/ogg"/>
+			<source src="file/1.webm" type="video/webm"/>
+			Your browser is not support ' < video >' tag.
+		</video>
+		<div id="controls">
+			<button id="playpause" value="pause" onclick='playpause()'><i class="flaticon-play128"></i></button>
+			<button id="stop" onclick='stop()'><i class="flaticon-stop4"></i></button>
+			<button id="replay" onclick='replay()'><i class="flaticon-rotate1"></i></button>
+			<div class="progress-bar">
+				<input type="range" id="progress1" min="0" max="100" value='0' onclick='pausebyprogress()' />			
+				<progress id='progress2' min='0' max='100' value='0'>0% played</progress>
+			</div>
+			<button id='mute' class='mute' title='mute' onclick='mute()'><i class="flaticon-sound64"></i></button>
+			<input type="range" id="volume" value="10" min="0" max="10" onchange='volume()'/>
+			<button id='expandcollapse' class='expandcollapse' onclick='expandcollapse();'><i class="flaticon-expand23"></i></button>
+			
+			
+		</div>
+	</div>
+</div>
+<small>Aktifkan rotasi layar dan klik full scren agar video jelas</a></small>
+<script type="text/javascript" src="videoplayer.js"></script>
+</body>
+
+</html>
